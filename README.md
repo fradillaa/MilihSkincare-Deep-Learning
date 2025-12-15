@@ -112,8 +112,7 @@ source venv/bin/activate
 7. Open the app.py and write this in the terminal  
 `pip install streamlit torch transformers pandas numpy`
 8. Type `streamlit run app.py` in the terminal
-9. Open a Browser
-The application will automatically open in your browser with the following URL:
+9. Open a browser. The application will automatically open in your browser with the following URL:
 ```
 Local URL: http://localhost:8501
 Network URL: http://192.168.x.x:8501
