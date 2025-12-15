@@ -74,10 +74,56 @@ Model performance is evaluated using common **multi-label classification metrics
 ---
 
 ## How to Run the Project
+1. Run ModelDeepLearning.ipynb
+2. Extract the zip file from the ModelDeepLearning.ipynb output
+   You will get the following files:
+   - best_model.pt
+   - product_embeddings.npy
+   - product_index.pkl
+   - Tokenizer_saved/ folder
+4. Download file app.py
+5. Make sure your folder structure looks like this:  
+skincare_recommendation/  
+│  
+├── .streamlit/  
+│ └── config.toml          # Streamlit theme configuration  
+│  
+├── tokenizer_saved/       # BERT tokenizer folder  
+│ ├── tokenizer_config.json  
+│ ├── vocab.txt  
+│ ├── tokenizer.json  
+│ └── special_tokens_map.json  
+│  
+├── app.py                 # Streamlit application file  
+├── best_model.pt          # Best model weights  
+├── product_embeddings.npy # Embeddings product  
+├── product_index.pkl      # Product database  
+└── skincare_dataset.csv   # Dataset (optional)  
+6. Install depedencies
+```
+# Windows
+python -m venv venv
+venv\Scripts\activate
 
-This project consists of two main stages:  
-**(1) model training and embedding generation**, and  
-**(2) running the user interface application**.
+# Mac/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+7. Open the app.py and write this in the terminal  
+`pip install streamlit torch transformers pandas numpy`
+8. Type `streamlit run app.py` in the terminal
+9. Open a Browser
+The application will automatically open in your browser with the following URL:
+```
+Local URL: http://localhost:8501
+Network URL: http://192.168.x.x:8501
+```
+10. Use the website
+   - Select Skin Type: Select one skin type (Combination, Dry, Normal, Oily, Sensitive)
+   - Select Product Type: Select a product category (you can choose more than one)
+   - Select Skin Problems: Select a skin problem (you can choose more than one)
+   - Select Allergens: Select ingredients you want to avoid
+   - Click Search Products: See the top 10 recommendations!
 
 ---
 
